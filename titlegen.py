@@ -12,7 +12,8 @@ edges = {
     'qualifier' : ([1.0],['position']),
     'position' : ([1.0],['linkage']),
     'linkage' : ([1.0],['org_type']),
-    'org_type' : ([1.0],['org_scope']),
+    'org_type' : ([0.9,1.0],['org_scope','org_qualifier']),
+    'org_qualifier' : ([1.0],['org_scope']),
     'org_scope' : ([1.0],['org_purpose']),
     'org_purpose' : ([1.0],[SENTINEL])
 }
@@ -27,6 +28,7 @@ tokens = {
     'role' : ['affairs', 'relations', 'partnerships', 'compliance', 'climate', 'maintenance'],
     'linkage' : ['of', 'to', 'for'],
     'org_type' : ['the office of', 'the committee on', 'the subcommittee for', 'the task force on'],
+    'org_qualifier' : ['strategic'],
     'org_scope' : ['academic', 'community', 'neighborhood', 'dining', 'athletic', 'alumni',
         'donor', 'investor', 'employee'],
     'org_purpose' : ['affairs', 'relations', 'partnerships', 'compliance', 'climate', 'services',
@@ -65,7 +67,7 @@ class MainPage(webapp2.RequestHandler):
         self.response.write('<meta name="description" content="What will be your next title at an R1 institution?" />')
         self.response.write('<meta name="robots" content="nosnippet" />')
         self.response.write('</head><body>')
-        self.response.write('<div id="header" />')
+        self.response.write('<div id="header">\n</header>')
         self.response.write('<div id="maincontent">')
         self.response.write(title)
         self.response.write('</div>')
