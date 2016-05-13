@@ -1,0 +1,21 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+- url: /style\.css
+  static_files: style.css
+  upload: style\.css
+
+- url: /.*
+  script: titlegen.app
+
+libraries:
+- name: webapp2
+  version: latest
+- name: jinja2
+  version: latest
