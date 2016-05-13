@@ -31,7 +31,8 @@ tokens = {
 }
 
 node = 'start'
-prev_node = ''
+prev_token = ''
+output = []
 while True:
     probs,e = edges[node]
     x = random()
@@ -42,9 +43,11 @@ while True:
             break
     if e[j] == SENTINEL:
         break
-    if node == prev_node:
+    tok = choice(tokens[e[j]])
+    if prev_token == tok:
         continue
-    print choice(tokens[e[j]]),
-    prev_node = node
+    output.append(tok)
+    prev_token = tok
     node = e[j]
 
+print(' '.join(output))
