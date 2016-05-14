@@ -58,20 +58,35 @@ def generate_title():
 
     return(' '.join(output))
 
+PRECONTENT = """<!DOCTYPE html><html><head>
+<title>University Title Generator</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+<meta name="description" content="What will be your next title at an R1 institution?" />
+<meta name="robots" content="nosnippet" />
+</head><body>
+<div id="header">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-77758304-1', 'auto');
+  ga('send', 'pageview');
+</script>
+</header>
+<div id="maincontent">
+<p id="text">"""
+
+POSTCONTENT = """</p>
+</div>
+</body></html>"""
+
 class MainPage(webapp2.RequestHandler):
     def get(self):
         title = generate_title()
-        self.response.write('<!DOCTYPE html><html><head>')
-        self.response.write('<title>University Title Generator</title>')
-        self.response.write('<link href="style.css" rel="stylesheet" type="text/css" />')
-        self.response.write('<meta name="description" content="What will be your next title at an R1 institution?" />')
-        self.response.write('<meta name="robots" content="nosnippet" />')
-        self.response.write('</head><body>')
-        self.response.write('<div id="header">\n</header>')
-        self.response.write('<div id="maincontent">')
+        self.response.write(PRECONTENT)
         self.response.write(title)
-        self.response.write('</div>')
-        self.response.write('</body></html>')
+        self.response.write(POSTCONTENT)
 
 app = webapp2.WSGIApplication([
         ('/', MainPage),
