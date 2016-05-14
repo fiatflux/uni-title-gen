@@ -24,15 +24,17 @@ tokens = {
     'position' : ['chancellor', 'provost', 'coordinator', 'manager', 'executive', 'chair',
             'liaison', 'dean'],
     'role_linkage' : ['of', 'to', 'for'],
-    'role_scope' : ['internal', 'external', 'academic', 'student', 'athletic', 'facilities'],
-    'role' : ['affairs', 'relations', 'partnerships', 'compliance', 'climate', 'maintenance'],
+    'role_scope' : ['internal', 'external', 'academic', 'student', 'athletic', 'facilities',
+        'interdepartmental'],
+    'role' : ['affairs', 'relations', 'partnerships', 'compliance', 'climate', 'maintenance',
+        'technology', 'communications'],
     'linkage' : ['of', 'to', 'for'],
     'org_type' : ['the office of', 'the committee on', 'the subcommittee for', 'the task force on'],
     'org_qualifier' : ['strategic'],
     'org_scope' : ['academic', 'community', 'neighborhood', 'dining', 'athletic', 'alumni',
         'donor', 'investor', 'employee'],
     'org_purpose' : ['affairs', 'relations', 'partnerships', 'compliance', 'climate', 'services',
-        'diversity']
+        'diversity', 'technology', 'communications', 'planning']
 }
 
 def generate_title():
