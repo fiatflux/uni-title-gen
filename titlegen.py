@@ -63,8 +63,6 @@ PRECONTENT = """<!DOCTYPE html><html><head>
 <link href="style.css" rel="stylesheet" type="text/css" />
 <meta name="description" content="What will be your next title at an R1 institution?" />
 <meta name="robots" content="nosnippet" />
-</head><body>
-<div id="header">
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -73,6 +71,10 @@ PRECONTENT = """<!DOCTYPE html><html><head>
   ga('create', 'UA-77758304-1', 'auto');
   ga('send', 'pageview');
 </script>
+
+</head><body>
+<div id="header">
+
 </header>
 <div id="maincontent">
 <p id="text">"""
