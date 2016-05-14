@@ -17,12 +17,12 @@ width :100%;
 height :1200 px;
 border-width: 5px;
 font-size: 100px ;
-/*padding-bottom:500px;*/
+padding-bottom:500px;
 }
 
-p#title {
-min-height:300px;
-}
+/*p#title {
+min-height:600px;
+}*/
 
 #footer {
 text-align:center;
