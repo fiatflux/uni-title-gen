@@ -32,7 +32,7 @@ tokens = {
     'org_type' : ['the office of', 'the committee on', 'the subcommittee for', 'the task force on'],
     'org_qualifier' : ['strategic'],
     'org_scope' : ['academic', 'community', 'neighborhood', 'dining', 'athletic', 'alumni',
-        'donor', 'investor', 'employee'],
+        'donor', 'investor', 'employee', 'learning'],
     'org_purpose' : ['affairs', 'relations', 'partnerships', 'compliance', 'climate', 'services',
         'diversity', 'technology', 'communications', 'planning']
 }
