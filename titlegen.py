@@ -1,7 +1,7 @@
-import webapp2
-
+import logging
 from random import choice
 from random import random
+import webapp2
 
 SENTINEL = '.'
 
@@ -99,6 +99,7 @@ class MainPage(webapp2.RequestHandler):
         self.response.write(PRECONTENT)
         self.response.write(title)
         self.response.write(POSTCONTENT)
+        logging.info('GeneratedTitle="%s"' % (title))
 
 app = webapp2.WSGIApplication([
         ('/', MainPage),
