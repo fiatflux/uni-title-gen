@@ -20,9 +20,9 @@ edges = {
 tokens = {
     'temporal' : ['interim', 'acting', 'temporary'],
     'prequalifier' : ['associate', 'assistant', 'deputy', 'lead', 'executive', 'principal'],
-    'qualifier' : ['associate', 'assistant', 'deputy', 'vice', 'deputy'],
+    'qualifier' : ['associate', 'assistant', 'deputy', 'vice'],
     'position' : ['chancellor', 'provost', 'coordinator', 'manager', 'executive', 'chair',
-            'liaison', 'dean'],
+            'liaison', 'dean', 'president'],
     'role_linkage' : ['of', 'to', 'for'],
     'role_scope' : ['internal', 'external', 'academic', 'student', 'athletic', 'facilities',
         'interdepartmental'],
@@ -52,7 +52,7 @@ def generate_title():
         if e[j] == SENTINEL:
             break
         tok = choice(tokens[e[j]])
-        if prev_token == tok:
+        if prev_token == tok and tok != 'deputy':
             continue
         output.append(tok)
         prev_token = tok
