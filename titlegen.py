@@ -88,9 +88,10 @@ var trackOutboundLink = function(url) {
 
 </header>
 <div id="maincontent">
-<p id="text">"""
+<p id="title">"""
 
 POSTCONTENT = """</p>
+<p><form><input id="refreshbutton" type="submit" value="This title is not prestigious enough for me. Do you even know who I am?" /></form></p>
 </div>
 <div id="footer"><p id="text"><a href="https://github.com/fiatflux/uni-title-gen" onclick="trackOutboundLink('https://github.com/fiatflux/uni-title-gen'); return false;">Edit me on github.</a></p></div>
 </body></html>"""
