@@ -74,6 +74,14 @@ PRECONTENT = """<!DOCTYPE html><html><head>
   ga('create', 'UA-77758304-1', 'auto');
   ga('send', 'pageview');
 </script>
+<script>
+var trackOutboundLink = function(url) {
+   ga('send', 'event', 'outbound', 'click', url, {
+     'transport': 'beacon',
+     'hitCallback': function(){document.location = url;}
+   });
+}
+</script>
 
 </head><body>
 <div id="header">
@@ -84,7 +92,7 @@ PRECONTENT = """<!DOCTYPE html><html><head>
 
 POSTCONTENT = """</p>
 </div>
-<div id="footer"><p id="text"><a href="https://github.com/fiatflux/uni-title-gen">Edit me on github.</a></p></div>
+<div id="footer"><p id="text"><a href="https://github.com/fiatflux/uni-title-gen" onclick="trackOutboundLink('https://github.com/fiatflux/uni-title-gen'); return false;">Edit me on github.</a></p></div>
 </body></html>"""
 
 class MainPage(webapp2.RequestHandler):
