@@ -56,15 +56,17 @@ padding-bottom: 10px;
   }
 
 input#refreshbutton {
-width:500px;
+width:530px;
 background: #3e9cdf; /*the colour of the button*/
 padding: 8px 14px 10px; /*apply some padding inside the button*/
 border:1px solid #3e9cbf; /*required or the default border for the browser will appear*/
 cursor:pointer; /*forces the cursor to change to a hand when the button is hovered*/
 /*style the text*/
-/*font-size:1.5em;*/
+font-size:21px;
 font-family:Oswald, sans-serif; /*Oswald is available from http://www.google.com/webfonts/specimen/Oswald*/
 letter-spacing:.1em;
+line-height: 120%;
+white-space: normal;
 text-shadow: 0 -1px 0px rgba(0, 0, 0, 0.3); /*give the text a shadow - doesn't appear in Opera 12.02 or earlier*/
 color: #fff;
 /*use box-shadow to give the button some depth - see cssdemos.tupence.co.uk/box-shadow.htm#demo7 for more info on this technique*/
