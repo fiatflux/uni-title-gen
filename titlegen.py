@@ -81,6 +81,7 @@ PRECONTENT = """<!DOCTYPE html><html><head>
 
 POSTCONTENT = """</p>
 </div>
+<div id="footer"><p id="text"><a href="https://github.com/fiatflux/uni-title-gen">Edit me on github.</a></p></div>
 </body></html>"""
 
 class MainPage(webapp2.RequestHandler):
