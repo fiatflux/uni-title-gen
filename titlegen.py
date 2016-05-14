@@ -10,7 +10,9 @@ edges = {
     'temporal' : ([0.5,0.9,1.0],['prequalifier','qualifier','position']),
     'prequalifier' : ([1.0],['qualifier']),
     'qualifier' : ([1.0],['position']),
-    'position' : ([1.0],['linkage']),
+    'position' : ([0.2,1.0],['role_scope','org_type']),
+    'role_scope' : ([1.0],['role']),
+    'role' : ([1.0],['linkage']),
     'linkage' : ([1.0],['org_type']),
     'org_type' : ([0.9,1.0],['org_scope','org_qualifier']),
     'org_qualifier' : ([1.0],['org_scope']),
@@ -21,9 +23,8 @@ tokens = {
     'temporal' : ['interim', 'acting', 'temporary'],
     'prequalifier' : ['associate', 'assistant', 'deputy', 'lead', 'executive', 'principal'],
     'qualifier' : ['associate', 'assistant', 'deputy', 'vice'],
-    'position' : ['chancellor', 'provost', 'coordinator', 'manager', 'executive', 'chair',
-            'liaison', 'dean', 'president'],
-    'role_linkage' : ['of', 'to', 'for'],
+    'position' : ['chancellor of', 'provost for', 'coordinator of', 'manager of', 'executive for',
+        'chair of', 'liaison to', 'dean of', 'president of'],
     'role_scope' : ['internal', 'external', 'academic', 'student', 'athletic', 'facilities',
         'interdepartmental'],
     'role' : ['affairs', 'relations', 'partnerships', 'compliance', 'climate', 'maintenance',
@@ -34,7 +35,7 @@ tokens = {
     'org_scope' : ['academic', 'community', 'neighborhood', 'dining', 'athletic', 'alumni',
         'donor', 'investor', 'employee', 'learning'],
     'org_purpose' : ['affairs', 'relations', 'partnerships', 'compliance', 'climate', 'services',
-        'diversity', 'technology', 'communications', 'planning']
+        'diversity', 'technology', 'communications', 'planning', 'outreach']
 }
 
 def generate_title():
