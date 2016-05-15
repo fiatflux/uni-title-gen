@@ -20,22 +20,22 @@ edges = {
     'org_purpose' : ([1.0],[SENTINEL])
 }
 tokens = {
-    'temporal' : ['interim', 'acting', 'temporary'],
-    'prequalifier' : ['associate', 'assistant', 'deputy', 'lead', 'executive', 'principal'],
-    'qualifier' : ['associate', 'assistant', 'deputy', 'vice'],
-    'position' : ['chancellor of', 'provost for', 'coordinator of', 'manager of', 'executive for',
-        'chair of', 'liaison to', 'dean of', 'president of'],
-    'role_scope' : ['internal', 'external', 'academic', 'student', 'athletic', 'facilities',
-        'interdepartmental'],
-    'role' : ['affairs', 'relations', 'partnerships', 'compliance', 'climate', 'maintenance',
-        'technology', 'communications'],
+    'temporal' : ['Interim', 'Acting', 'Temporary'],
+    'prequalifier' : ['Associate', 'Assistant', 'Deputy', 'Lead', 'Executive', 'Principal'],
+    'qualifier' : ['Associate', 'Assistant', 'Deputy', 'Vice'],
+    'position' : ['Chancellor of', 'Provost for', 'Coordinator of', 'Manager of', 'Executive for',
+        'Chair of', 'Liaison to', 'Dean of', 'President of'],
+    'role_scope' : ['Internal', 'External', 'Academic', 'Student', 'Athletic', 'Facilities',
+        'Interdepartmental'],
+    'role' : ['Affairs', 'Relations', 'Partnerships', 'Compliance', 'Climate', 'Maintenance',
+        'Technology', 'Communications'],
     'linkage' : ['of', 'to', 'for'],
-    'org_type' : ['the office of', 'the committee on', 'the subcommittee for', 'the task force on'],
-    'org_qualifier' : ['strategic'],
-    'org_scope' : ['academic', 'community', 'neighborhood', 'dining', 'athletic', 'alumni',
-        'donor', 'investor', 'employee', 'learning'],
-    'org_purpose' : ['affairs', 'relations', 'partnerships', 'compliance', 'climate', 'services',
-        'diversity', 'technology', 'communications', 'planning', 'outreach']
+    'org_type' : ['the Office of', 'the Committee on', 'the Subcommittee for', 'the Task Force on'],
+    'org_qualifier' : ['Strategic'],
+    'org_scope' : ['Academic', 'Community', 'Neighborhood', 'Dining', 'Athletic', 'Alumni',
+        'Donor', 'Investor', 'Employee', 'Learning'],
+    'org_purpose' : ['Affairs', 'Relations', 'Partnerships', 'Compliance', 'Climate', 'Services',
+        'Diversity', 'Technology', 'Communications', 'Planning', 'Outreach']
 }
 
 def generate_title():
@@ -90,7 +90,7 @@ var trackOutboundLink = function(url) {
 
 POSTCONTENT = """</p>
 </div>
-<div id="footer"><p id="text"><a href="https://github.com/fiatflux/uni-title-gen" onclick="trackOutboundLink('https://github.com/fiatflux/uni-title-gen'); return false;">Edit me on github.</a></p></div>
+<!--Fork me on github: https://github.com/fiatflux/uni-title-gen -->
 </body></html>"""
 
 class MainPage(webapp2.RequestHandler):
