@@ -1,6 +1,6 @@
 import logging
-from random import choice
-from random import random
+from math import log, sqrt
+from random import choice, lognormvariate, random
 import webapp2
 
 SENTINEL = '.'
@@ -38,10 +38,32 @@ tokens = {
         'Diversity', 'Technology', 'Communications', 'Planning', 'Outreach']
 }
 
+base_salaries = {
+        'Chancellor of' : 400000,
+        'Provost for' : 300000,
+        'Coordinator of' : 80000,
+        'Manager of' : 160000,
+        'Executive for' : 250000,
+        'Chair of' : 150000,
+        'Liaison to' : 80000,
+        'Dean of' : 250000,
+        'President of' : 250000
+}
+
 def generate_title():
     node = 'start'
     prev_token = ''
     output = []
+
+    num_qualifiers = 0
+    has_temporal = False
+    has_infix_role = False
+    is_strategic = False
+    is_executive = False
+    is_athletic = False
+    is_diversity = False
+    is_finance = False
+    is_academic = False
     while True:
         probs,e = edges[node]
         x = random()
@@ -55,11 +77,61 @@ def generate_title():
         tok = choice(tokens[e[j]])
         if prev_token == tok and tok != 'deputy':
             continue
-        output.append(tok)
-        prev_token = tok
+
         node = e[j]
 
-    return(' '.join(output))
+        if not num_qualifiers:
+            if node == 'position':
+                # Handle pre-position salary adjustments.
+                if output[0] in tokens['temporal']:
+                    has_temporal = True
+                    num_qualifiers = len(output) - 1
+                else:
+                    num_qualifiers = len(output)
+                base_salary = base_salaries[tok]
+            elif tok == 'Executive' or tok == 'Principal':
+                is_executive = True
+        elif node == 'role':
+            has_infix_role = True
+        elif tok == 'Strategic':
+            is_strategic = True
+        elif tok == 'Athletic':
+            is_athletic = True
+        elif tok == 'Diversity':
+            is_diversity = True
+        elif tok == 'Donor' or tok == 'Investor':
+            is_finance = True
+        elif tok == 'Learning' or tok == 'Academic':
+            is_academic = True
+
+        output.append(tok)
+        prev_token = tok
+    
+    multiplier = num_qualifiers**-1.5
+    if has_temporal:
+        multiplier *= 0.9
+    if has_infix_role:
+        multiplier *= 0.9
+    if is_executive:
+        multiplier *= 1.3
+    if is_strategic:
+        multiplier *= 1.1
+    if is_athletic:
+        multiplier *= 1.5
+    if is_diversity:
+        multiplier *= 0.8
+    if is_finance:
+        multiplier *= 1.5
+    if is_academic:
+        multiplier *= 0.8
+
+    m = base_salary*multiplier
+    v = (base_salary*0.05)**2
+    phi = sqrt(v + m**2)
+    mu = log(m**2/phi)
+    sigma = sqrt(log(phi**2/m**2))
+
+    return(' '.join(output), lognormvariate(mu, sigma))
 
 PRECONTENT = """<!DOCTYPE html><html><head>
 <title>University Title Generator</title>
@@ -87,21 +159,23 @@ var trackOutboundLink = function(url) {
 
 </head><body>
 <div id="maincontent">
-<form><input id="refreshbutton" type="submit" value="This title is not prestigious enough for me. Do you even know who I am?" /></form>
 <p id="title">"""
 
-POSTCONTENT = """</p>
+POSTCONTENT = """
+<form><input id="refreshbutton" type="submit" value="This title is not prestigious enough for me. Do you even know who I am?" /></form>
 </div>
 <!--Fork me on github: https://github.com/fiatflux/uni-title-gen -->
 </body></html>"""
 
 class MainPage(webapp2.RequestHandler):
     def get(self):
-        title = generate_title()
+        title,salary = generate_title()
         self.response.write(PRECONTENT)
         self.response.write(title)
+        self.response.write('</p></div><div id="footer"><p id="salary">Estimated salary: $%s</p>' % format(int(salary), ',d'))
         self.response.write(POSTCONTENT)
         logging.info('GeneratedTitle="%s"' % (title))
+        logging.info('GeneratedSalary="%d"' % (salary))
 
 app = webapp2.WSGIApplication([
         ('/', MainPage),

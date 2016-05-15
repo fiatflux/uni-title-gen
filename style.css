@@ -9,6 +9,20 @@ font-size: 100px ;
 padding-bottom:500px;
 }
 
+#footer {
+position: fixed;
+bottom: 60px;
+width:100%;
+white-space: normal;
+}
+
+p#salary {
+text-align: center;
+color: grey;
+font-size: 50px;
+margin-bottom: 80px;
+}
+
 input#refreshbutton {
 width:530px;
 position: fixed;
