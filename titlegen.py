@@ -64,7 +64,9 @@ def generate_title():
 PRECONTENT = """<!DOCTYPE html><html><head>
 <title>University Title Generator</title>
 <link href="style.css" rel="stylesheet" type="text/css" />
-<meta name="description" content="What will be your next title at an R1 institution?" />
+<meta property="og:image" content="suit.jpg" />
+<meta name="description" content="Damning indictment of the corporatization of higher education, or
+career finder? You decide!" />
 <meta name="robots" content="nosnippet" />
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

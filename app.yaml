@@ -1,5 +1,5 @@
 application: uni-title-gen
-version: alpha-003
+version: alpha-004
 runtime: python27
 api_version: 1
 threadsafe: true
@@ -12,6 +12,10 @@ handlers:
 - url: /style\.css
   static_files: style.css
   upload: style\.css
+
+- url: /suit\.jpg
+  static_files: suit.jpg
+  upload: suit\.jpg
 
 - url: /.*
   script: titlegen.app
