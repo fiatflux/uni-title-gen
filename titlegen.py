@@ -162,7 +162,7 @@ var trackOutboundLink = function(url) {
 <p id="title">"""
 
 POSTCONTENT = """
-<form><input id="refreshbutton" type="submit" value="This title is not prestigious enough for me. Do you even know who I am?" /></form>
+<form><input id="refreshbutton" type="submit" value="Click here if this position is not prestigious enough for you." /></form>
 </div>
 <!--Fork me on github: https://github.com/fiatflux/uni-title-gen -->
 </body></html>"""
