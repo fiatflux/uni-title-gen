@@ -56,7 +56,6 @@ def generate_title():
     output = []
 
     num_qualifiers = 0
-    has_temporal = False
     has_infix_role = False
     is_strategic = False
     is_executive = False
@@ -82,12 +81,7 @@ def generate_title():
 
         if not num_qualifiers:
             if node == 'position':
-                # Handle pre-position salary adjustments.
-                if output[0] in tokens['temporal']:
-                    has_temporal = True
-                    num_qualifiers = len(output) - 1
-                else:
-                    num_qualifiers = len(output)
+                num_qualifiers = len(output)
                 base_salary = base_salaries[tok]
             elif tok == 'Executive' or tok == 'Principal':
                 is_executive = True
@@ -108,8 +102,6 @@ def generate_title():
         prev_token = tok
     
     multiplier = num_qualifiers**-1.5
-    if has_temporal:
-        multiplier *= 0.9
     if has_infix_role:
         multiplier *= 0.9
     if is_executive:
@@ -125,15 +117,19 @@ def generate_title():
     if is_academic:
         multiplier *= 0.8
 
-    m = base_salary*multiplier
-    v = (base_salary*0.05)**2
-    phi = sqrt(v + m**2)
-    mu = log(m**2/phi)
-    sigma = sqrt(log(phi**2/m**2))
+    try:
+        m = base_salary*multiplier
+        v = (base_salary*0.05)**2
+        phi = sqrt(v + m**2)
+        mu = log(m**2/phi)
+        sigma = sqrt(log(phi**2/m**2))
+        return(' '.join(output), format(int(lognormvariate(mu, sigma)), ',d'))
+    except:
+        return(' '.join(output), 'priceless')
 
-    return(' '.join(output), lognormvariate(mu, sigma))
-
-PRECONTENT = """<!DOCTYPE html><html><head>
+PRECONTENT = """<!DOCTYPE html>
+<!-- Fork me on github: https://github.com/fiatflux/uni-title-gen -->
+<html><head>
 <title>University Title Generator</title>
 <link href="style.css" rel="stylesheet" type="text/css" />
 <meta property="og:image" content="suit.jpg" />
@@ -164,7 +160,6 @@ var trackOutboundLink = function(url) {
 POSTCONTENT = """
 <form><input id="refreshbutton" type="submit" value="Click here if this position is not prestigious enough for you." /></form>
 </div>
-<!--Fork me on github: https://github.com/fiatflux/uni-title-gen -->
 </body></html>"""
 
 class MainPage(webapp2.RequestHandler):
@@ -172,10 +167,10 @@ class MainPage(webapp2.RequestHandler):
         title,salary = generate_title()
         self.response.write(PRECONTENT)
         self.response.write(title)
-        self.response.write('</p></div><div id="footer"><p id="salary">Estimated salary: $%s</p>' % format(int(salary), ',d'))
+        self.response.write('</p></div><div id="footer"><p id="salary">Estimated salary: $%s</p>' % salary)
         self.response.write(POSTCONTENT)
         logging.info('GeneratedTitle="%s"' % (title))
-        logging.info('GeneratedSalary="%d"' % (salary))
+        logging.info('GeneratedSalary="%s"' % (salary))
 
 app = webapp2.WSGIApplication([
         ('/', MainPage),
