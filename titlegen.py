@@ -132,9 +132,11 @@ PRECONTENT = """<!DOCTYPE html>
 <html><head>
 <title>University Title Generator</title>
 <link href="style.css" rel="stylesheet" type="text/css" />
-<meta property="og:image" content="suit.jpg" />
-<meta name="description" content="Damning indictment of the corporatization of higher education, or
-career finder? You decide!" />
+<meta property="og:url" content="http://universitytitlegenerator.com/" />
+<meta property="og:title" content="University Title Generator" />
+<meta property="og:image" content="http://universitytitlegenerator.com/suit.jpg" />
+<meta name="og:description" content="Damning indictment of the corporatization of higher education, or career finder? You decide!" />
+<meta name="description" content="Damning indictment of the corporatization of higher education, or career finder? You decide!" />
 <meta name="robots" content="nosnippet" />
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
