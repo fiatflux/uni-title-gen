@@ -50,7 +50,20 @@ base_salaries = {
         'President of' : 250000
 }
 
+rate_of_real_salaries = 1.0 / 200.0
+real_people = [
+    ('President of the University of California (ask about those deportations)', '570,000 + house + car'),
+    ('Basketball Coach at the University of California, Los Angeles', '3,473,973'),
+    ('President of the University of Colorado', '359,100 + bolstering the petroleum industry'),
+    ('Chancellor of the University of California, Berkeley', '516,446'),
+    ('President of Pennsylvania State University', '2,906,721'),
+    ('President of Auburn University', '2,542,865')
+]
+
 def generate_title():
+    if random() < rate_of_real_salaries:
+        return choice(real_people)
+
     node = 'start'
     prev_token = ''
     output = []
@@ -160,7 +173,7 @@ var trackOutboundLink = function(url) {
 <p id="title">"""
 
 POSTCONTENT = """
-<form><input id="refreshbutton" type="submit" value="Click here if this position is not prestigious enough for you." /></form>
+<form><input type="hidden" name="r" value="y" /><input id="refreshbutton" type="submit" value="Click here if this position is not prestigious enough for you." /></form>
 </div>
 </body></html>"""
 

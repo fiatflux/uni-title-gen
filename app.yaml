@@ -1,5 +1,5 @@
 application: uni-title-gen
-version: alpha-007
+version: alpha-008
 runtime: python27
 api_version: 1
 threadsafe: true
@@ -22,6 +22,4 @@ handlers:
 
 libraries:
 - name: webapp2
-  version: latest
-- name: jinja2
   version: latest
