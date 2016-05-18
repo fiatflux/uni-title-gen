@@ -21,6 +21,7 @@ margin-bottom: 20vmin;
 }
 
 input#refreshbutton {
+-webkit-appearance:none;
 width: 80vmin;
 position: fixed;
 bottom: 5vmin;

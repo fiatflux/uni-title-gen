@@ -1,5 +1,5 @@
 application: uni-title-gen
-version: alpha-006
+version: alpha-007
 runtime: python27
 api_version: 1
 threadsafe: true
