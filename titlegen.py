@@ -158,13 +158,16 @@ PRECONTENT = """<!DOCTYPE html>
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
   ga('create', 'UA-77758304-1', 'auto');
   ga('send', 'pageview');
-</script>
-<script>
-var trackOutboundLink = function(url) {
-   ga('send', 'event', 'outbound', 'click', url, {
-     'transport': 'beacon',
-     'hitCallback': function(){document.location = url;}
-   });
+
+var trackOutboundLink = function(url, isExternal) {
+    var params = {};
+    if (!isExternal) {
+        params.hitCallback = function () {
+            document.location = url;
+        }
+    }
+    ga('send', 'event', 'outbound', 'click', url, params);
+    return isExternal;
 }
 </script>
 
@@ -173,7 +176,8 @@ var trackOutboundLink = function(url) {
 <p id="title">"""
 
 POSTCONTENT = """
-<form><input type="hidden" name="r" value="y" /><input id="refreshbutton" type="submit" value="Click here if this position is not prestigious enough for you." /></form>
+<form><input id="refreshbutton" type="submit" value="Click here if this position is not prestigious enough for you." /></form>
+<a id="articlebutton" target="_blank" href="http://www.washingtonmonthly.com/magazine/septemberoctober_2011/features/administrators_ate_my_tuition031641.php?page=all" onClick="trackOutboundLink('http://www.washingtonmonthly.com/magazine/septemberoctober_2011/features/administrators_ate_my_tuition031641.php?page=all', true);">?</a>
 </div>
 </body></html>"""
 

@@ -22,11 +22,11 @@ margin-bottom: 20vmin;
 
 input#refreshbutton {
 -webkit-appearance:none;
-width: 80vmin;
+width: 70vmin;
 position: fixed;
 bottom: 5vmin;
 left: 50%;
-margin-left: -40vmin;
+margin-left: -35vmin;
 white-space: normal;
 background: #3e9cdf; /*the colour of the button*/
 padding: 1vmin 1vmin 1vmin; /*apply some padding inside the button*/
@@ -55,4 +55,23 @@ color:#dfe7ea;
 -webkit-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73, 0px 2px 5px #999;
 -moz-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73, 0px 2px 5px #999;
 box-shadow: inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73, 0px 2px 5px #999;
+}
+
+a { color:inherit; text-decoration: none; }
+a#articlebutton {
+-webkit-appearance:none;
+font-size:3.5vmin;
+width:10vmin;
+height:10vmin;
+position:fixed;
+bottom: 0px;
+right:0px;
+margin-left:-10vmin
+white-space:normal;
+background:none;
+padding: 1vmin 1vmin 1vmin;
+border:none;
+}
+a#articlebutton:hover, input#articlebutton:focus {
+color:#e0e0e0;
 }
