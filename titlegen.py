@@ -50,18 +50,25 @@ base_salaries = {
         'President of' : 250000
 }
 
-rate_of_real_salaries = 1.0 / 200.0
+rate_of_real_salaries = 1.0 / 20.0
 real_people = [
     ('President of the University of California (ask about those deportations)', '570,000 + house + car'),
     ('Basketball Coach at the University of California, Los Angeles', '3,473,973'),
-    ('President of the University of Colorado', '359,100 + bolstering the petroleum industry'),
+    ('President of the University of Colorado', '359,100 + <a href="http://buildabetterbenson.org/timeline-of-corruption/">bolstering the petroleum industry</a>'),
     ('Chancellor of the University of California, Berkeley', '516,446'),
     ('President of Pennsylvania State University', '2,906,721'),
-    ('President of Auburn University', '2,542,865')
+    ('President of Auburn University', '2,542,865'),
+]
+
+rate_of_honorary_clients = 1.0 / 2.0
+honorary_clients = [
+        ('<div style="font-size:.4em;">Honorary Client of University Title Generator! Congratulations!</div> Senior Vice President for Strategy and <a href="https://twitter.com/JohnPatLeary/status/736202990772715520">Policy</a> at the University of North Carolina', '245,000')
 ]
 
 def generate_title():
     if random() < rate_of_real_salaries:
+        if random() < rate_of_honorary_clients:
+            return choice(honorary_clients)
         return choice(real_people)
 
     node = 'start'
@@ -173,7 +180,7 @@ var trackOutboundLink = function(url) {
 <p id="title">"""
 
 POSTCONTENT = """
-<form><input type="hidden" name="r" value="y" /><input id="refreshbutton" type="submit" value="Click here if this position is not prestigious enough for you." /></form>
+<form><input id="refreshbutton" type="submit" value="Click here if this position is not prestigious enough for you." /></form>
 </div>
 </body></html>"""
 
