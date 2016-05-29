@@ -61,7 +61,7 @@ real_people = [
 
 rate_of_honorary_clients = 1.0 / 2.0
 honorary_clients = [
-        ('Senior Vice President for Strategy and <a href="https://twitter.com/JohnPatLeary/status/736202990772715520">Policy</a> at the University of North Carolina', '245,000'),
+        ('Senior Vice President for Strategy and <a href="http://thinkprogress.org/politics/2007/02/15/10375/aei-bush-white-house/">Policy</a> at the University of North Carolina', '245,000'),
         ('President of the University of Colorado', '359,100 + <a href="http://buildabetterbenson.org/timeline-of-corruption/">bolstering the petroleum industry</a>'),
 ]
 honorary_client_text = '<div style="font-size:.4em;">Honorary Client of University Title Generator! Congratulations!</div> '
