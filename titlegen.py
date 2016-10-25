@@ -14,27 +14,27 @@ edges = {
     'role_scope' : ([1.0],['role']),
     'role' : ([1.0],['linkage']),
     'linkage' : ([1.0],['org_type']),
-    'org_type' : ([0.8,1.0],['org_scope','org_qualifier']),
-    'org_qualifier' : ([0.5,1.0],['org_scope','org_scope_terminal']),
+    'org_type' : ([0.4,0.7,1.0],['org_scope','org_scope_terminal','org_qualifier']),
+    'org_qualifier' : ([1.0],['org_scope']),
     'org_scope' : ([1.0],['org_purpose']),
     'org_scope_terminal' : ([1.0],[SENTINEL]),
     'org_purpose' : ([1.0],[SENTINEL])
 }
 tokens = {
-    'temporal' : ['Best', 'Greatest', 'Biggest', 'STRONG'],
+    'temporal' : ['Best', 'Greatest', 'Biggest'],
     'prequalifier' : ['Associate', 'Assistant', 'Deputy', 'Lead', 'Executive', 'Principal'],
     'qualifier' : ['Associate', 'Assistant', 'Deputy', 'Vice'],
     'position' : ['Chancellor of', 'Provost for', 'Coordinator of', 'Manager of', 'Executive for',
         'Chair of', 'Liaison to', 'Dean of', 'President of'],
-    'role_scope' : ['Internal', 'External', 'Dictatorial', 'China', 'Nuclear Weapon', 'Athletic', 'Border Wall'],
+    'role_scope' : ['Internal', 'External', 'Dictatorial', 'Chinese', 'Nuclear Weapon', 'Athletic', 'Border Wall'],
     'role' : ['Affairs', 'Relations', 'Partnerships', 'Compliance', 'Climate', 'Maintenance',
-        'Technology', 'Communications', 'China'],
+        'Technology', 'Communications'],
     'linkage' : ['of', 'to', 'for'],
     'org_type' : ['the Office of', 'the Committee on', 'the Subcommittee for', 'the Task Force on'],
     'org_qualifier' : ['Strategic','Big, Big, Incredible', 'VERY IMPRESSIVE', 'China', 'Underaged'],
-    'org_scope_terminal' : ['Making America Great Again', 'Building Walls', 'Taking Out Their Family', 'the Best Words',
+    'org_scope_terminal' : ['Making America Great Again', 'Wall Construction', 'Taking Out Their Family', 'Best Words',
                             'RADICAL ISLAMIC TERRORISM', 'Long Form Birth Certificates'],
-    'org_scope' : ['ISIS', 'Pussy Grabbing', 'Golf', 'Alumni', 'China', 'Crooked Hillary',
+    'org_scope' : ['ISIS', 'Pussy Grabbing', 'Golf', 'Alumni', 'China China China China', 'Crooked Hillary',
         'Lobbyist', 'Investor', 'Employee', 'Learning', 'Supermodel', 'Rigged Media', 'Litigious'],
     'org_purpose' : ['Affairs', 'Relations', 'Partnerships', 'Compliance', 'Climate Change Denial', 'Services',
         'Taco Bowls', 'Technology', 'Communications', 'Planning', 'Outreach']
@@ -141,7 +141,7 @@ def generate_title():
     if is_academic:
         multiplier *= 0.8
 
-    rate_of_trump_uni = 0.1
+    rate_of_trump_uni = 0.3
     if random() < rate_of_trump_uni:
         output.append(' at <a target="_blank" onClick="trackOutboundLink(\'trumpuniversity\', true);"  href="http://www.newyorker.com/news/john-cassidy/trump-university-its-worse-than-you-think">Trump University</a>')
 
