@@ -141,7 +141,7 @@ def generate_title():
     if is_academic:
         multiplier *= 0.8
 
-    rate_of_trump_uni = 0.3
+    rate_of_trump_uni = 0.8
     if random() < rate_of_trump_uni:
         output.append(' at <a target="_blank" onClick="trackOutboundLink(\'trumpuniversity\', true);"  href="http://www.newyorker.com/news/john-cassidy/trump-university-its-worse-than-you-think">Trump University</a>')
 
