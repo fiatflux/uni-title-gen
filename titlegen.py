@@ -33,9 +33,9 @@ tokens = {
     'org_type' : ['the Office of', 'the Committee on', 'the Subcommittee for', 'the Task Force on'],
     'org_qualifier' : ['Strategic'],
     'org_scope' : ['Academic', 'Community', 'Neighborhood', 'Dining', 'Athletic', 'Alumni',
-        'Donor', 'Investor', 'Employee', 'Learning'],
+        'Donor', 'Investor', 'Employee', 'Learning', 'Inclusive'],
     'org_purpose' : ['Affairs', 'Relations', 'Partnerships', 'Compliance', 'Climate', 'Services',
-        'Diversity', 'Technology', 'Communications', 'Planning', 'Outreach']
+        'Diversity', 'Technology', 'Communications', 'Planning', 'Outreach', 'Excellence']
 }
 
 base_salaries = {
@@ -113,7 +113,7 @@ def generate_title():
             is_strategic = True
         elif tok == 'Athletic':
             is_athletic = True
-        elif tok == 'Diversity':
+        elif tok == 'Diversity' or tok == 'Inclusive':
             is_diversity = True
         elif tok == 'Donor' or tok == 'Investor':
             is_finance = True
