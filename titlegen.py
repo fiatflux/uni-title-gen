@@ -50,7 +50,7 @@ base_salaries = {
         'President of' : 250000
 }
 
-rate_of_real_salaries = 1.0 / 2.0
+rate_of_real_salaries = 1.0 / 25.0
 real_people = [
     ('President of the University of California (ask about those deportations)', '570,000 + house + car'),
     ('Basketball Coach at the University of California, Los Angeles', '3,473,973'),
@@ -59,26 +59,11 @@ real_people = [
     ('President of Auburn University', '2,542,865'),
 ]
 
-rate_of_honorary_clients = 1.0
+rate_of_honorary_clients = 1.0 / 2.0
 honorary_clients = [
-        ('Administrators of Denver Public Schools taking more than $80k/year each', '46,800,000 total'),
-        ('Superintendent of Denver Public Schools', '242,125 each'),
-        ('The 38 Executive Managers of Denver Public Schools', '134,349 each'),
-        ('The 22 Instructional Superintendents of Denver Public Schools', '128,121 each'),
-        ('The 8 Duputy General Counsels of Denver Public Schools', '116,864 each'),
-        ('The 2 Program Directors (non-supervisory) of Denver Public Schools', '109,246 each'),
-        ('The 50 Directors - Operational of Denver Public Schools', '5,322,218 total'),
-        ('The 3 Associate Directors - Operational of Denver Public Schools', '105,685 each'),
-        ('The 22 Database/Network Administrators of Denver Public Schools', '105,153 each'),
-        ('The 2 Sr. Network Administrators of Denver Public Schools', '103,564 each'),
-        ('The 10 Software Architects of Denver Public Schools', '1,011,502 total'),
-        ('The 25 Directors - Instructional of Denver Public Schools', '2,492,736 total'),
-        ('The 11 Associate Directors - Instructional of Denver Public Schools', '1,032,824 total'),
-        ('President of the University of Colorado', '359,100'),
-        ('Football Coach at the University of Colorado', '10,300,00 buyout')
+        ('Senior Vice President for Strategy and <a target="_blank" onClick="trackOutboundLink(\'aei\', true);" href="http://thinkprogress.org/politics/2007/02/15/10375/aei-bush-white-house/">Policy</a> at the University of North Carolina', '245,000'),
+        ('President of the University of Colorado', '359,100 + <a target="_blank" onClick="trackOutboundLink(\'bbb\', true);" href="http://buildabetterbenson.org/timeline-of-corruption/">bolstering the petroleum industry</a>'),
 ]
-        #('Senior Vice President for Strategy and <a target="_blank" onClick="trackOutboundLink(\'aei\', true);" href="http://thinkprogress.org/politics/2007/02/15/10375/aei-bush-white-house/">Policy</a> at the University of North Carolina', '245,000'),
-
 honorary_client_text = '<div style="font-size:.4em;">Honorary Client of University Title Generator! Congratulations!</div> '
 
 def generate_title():
