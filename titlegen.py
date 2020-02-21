@@ -50,7 +50,7 @@ base_salaries = {
         'President of' : 250000
 }
 
-rate_of_real_salaries = 1.0 / 25.0
+rate_of_real_salaries = 1.0 / 3.0
 real_people = [
     ('President of the University of California (ask about those deportations)', '570,000 + house + car'),
     ('Basketball Coach at the University of California, Los Angeles', '3,473,973'),
@@ -59,10 +59,9 @@ real_people = [
     ('President of Auburn University', '2,542,865'),
 ]
 
-rate_of_honorary_clients = 1.0 / 2.0
+rate_of_honorary_clients = 1.0 / 10.0
 honorary_clients = [
-        ('Senior Vice President for Strategy and <a target="_blank" onClick="trackOutboundLink(\'aei\', true);" href="http://thinkprogress.org/politics/2007/02/15/10375/aei-bush-white-house/">Policy</a> at the University of North Carolina', '245,000'),
-        ('President of the University of Colorado', '359,100 + <a target="_blank" onClick="trackOutboundLink(\'bbb\', true);" href="http://buildabetterbenson.org/timeline-of-corruption/">bolstering the petroleum industry</a>'),
+        ('President of the University of Colorado', '<a target="_blank" onClick="trackOutboundLink(\'kennedy\', true);" href="https://twitter.com/BoulderCRC/status/1124062242243272705">650k 1st yr + 30.7%% raise second year + $200k bonuses for basic elements of the job + country club fees</a>'),
 ]
 honorary_client_text = '<div style="font-size:.4em;">Honorary Client of University Title Generator! Congratulations!</div> '
 
