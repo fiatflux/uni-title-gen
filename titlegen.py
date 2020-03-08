@@ -50,7 +50,7 @@ base_salaries = {
         'President of' : 250000
 }
 
-rate_of_real_salaries = 1.0 / 3.0
+rate_of_real_salaries = 1.0 / 10.0
 real_people = [
     ('President of the University of California (ask about those deportations)', '570,000 + house + car'),
     ('Basketball Coach at the University of California, Los Angeles', '3,473,973'),
@@ -59,7 +59,7 @@ real_people = [
     ('President of Auburn University', '2,542,865'),
 ]
 
-rate_of_honorary_clients = 1.0 / 10.0
+rate_of_honorary_clients = 1.0 / 4.0
 honorary_clients = [
         ('President of the University of Colorado', '<a target="_blank" onClick="trackOutboundLink(\'kennedy\', true);" href="https://twitter.com/BoulderCRC/status/1124062242243272705">650k 1st yr + 30.7%% raise second year + $200k bonuses for basic elements of the job + country club fees</a>'),
 ]
